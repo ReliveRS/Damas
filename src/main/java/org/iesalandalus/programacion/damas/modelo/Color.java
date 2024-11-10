@@ -13,4 +13,10 @@ public enum Color {
     public String toString() {
         return cadenaAMostrar;
     }
+
+
+
+
+
+
 }
