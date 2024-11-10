@@ -29,7 +29,11 @@ public class Posicion {
         this.columna = columna;
     }
 
-
+    // Constructor con parámetros fila y columna
+    public Posicion(int fila, char columna) {
+        setFila(fila);  // Llama al setter de fila
+        setColumna(columna);  // Llama al setter de columna
+    }
 
 
 
