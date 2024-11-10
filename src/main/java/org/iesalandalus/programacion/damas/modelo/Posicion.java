@@ -34,7 +34,20 @@ public class Posicion {
         setFila(fila);  // Llama al setter de fila
         setColumna(columna);  // Llama al setter de columna
     }
+    /**
+     * Constructor de copia.
+     * Copia los valores de la posicion como parámetro en un nuevo objeto c.
+    */
+    public Posicion(Posicion c)
+    {
+        //Comprobamos que el objeto pasado como parámetro no es nulo
+        if (c==null)
+            throw new NullPointerException("ERROR: Has pasado una posicion nula como parámetro");
 
+        setFila(c.getFila());
+        setColumna(c.getColumna());
+
+    }
 
 
 
