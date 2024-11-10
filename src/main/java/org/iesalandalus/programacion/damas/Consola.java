@@ -4,8 +4,6 @@ import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.damas.modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
-import java.util.Scanner;
-
 
 public class Consola {
 
@@ -23,9 +21,9 @@ public class Consola {
     }
 
     // Método para elegir una opción del menú principal
-    public static int elegirOpcionMenu() {
-
-        int opcion;
+    public static int elegirOpcionMenu()
+    {
+        int opcion = -1;
 
         do {
             System.out.print("Elija una opción (1-4): ");
@@ -35,8 +33,8 @@ public class Consola {
             } else {
                 System.out.println("Opción no válida. Inténtelo de nuevo.");
             }
-        } while (opcion < 1 && opcion > 4)
-
+        } while (opcion < 1 && opcion > 4);
+        return opcion;
     }
 
     // Método para elegir el color de la dama
@@ -71,7 +69,8 @@ public class Consola {
     }
 
     // Método para elegir la dirección
-    public static Direccion elegirDireccion() {
+    public static Direccion elegirDireccion()
+    {
 
         Direccion direccion = null;
         int opcion;
@@ -99,9 +98,10 @@ public class Consola {
                 }
                 return direccion;
 
-            } while (opcion < 1 && opcion > 4)
+            } while (opcion < 1 && opcion > 4);
 
         }
+        return direccion;
     }
 
 // Método para elegir el número de pasos
@@ -118,7 +118,7 @@ public class Consola {
                 System.out.println("El número de pasos debe ser al menos 1.");
             }
 
-        }while(pasos<1)
+        }while(pasos<1);
 
         return pasos;
 

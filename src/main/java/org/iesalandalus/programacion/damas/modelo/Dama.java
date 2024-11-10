@@ -59,7 +59,7 @@ public class Dama {
 // Método para crear una posición inicial aleatoria basada en el color de la dama
     private Posicion crearPosicionInicial(Color color) {
         int fila = 0;
-        char columna;
+        char columna = 'a';
 
         // Si la dama es blanca, la posición inicial debe ser en las filas 1, 2 o 3
         if (color == Color.BLANCO) {
@@ -69,7 +69,16 @@ public class Dama {
         }
 
         // La columna debe ser siempre una casilla negra (de 'a' a 'h')
-        columna = (char) ('a' + (int) (Math.random() * 8));  // Aleatorio entre 'a' y 'h'
+        // Para las damas Blancas fila 1 posiciones impares,fila 2 posiciones pares,3 posiciones pares
+        switch(fila){
+            case 1,3,5,7:
+                columna = (char) ('a' + (int) (Math.random() * 4)*2);
+                break;
+            case 2,6,8:
+                columna = (char) ('a' + (int) (Math.random() * 4)*2+1);
+                break;
+        }
+
 
         return new Posicion(fila, columna);  // Retorna una nueva posición aleatoria
     }
@@ -149,5 +158,7 @@ public void mover(Direccion direccion, int pasos) throws IllegalArgumentExceptio
 
 
     public boolean esDamaEspecial() {
+
+        return true;
     }
 }
