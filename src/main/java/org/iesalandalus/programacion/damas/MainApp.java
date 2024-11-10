@@ -12,8 +12,21 @@ public class MainApp
     private static Dama dama;
 
     public static void main(String[] args){
+        int opcion;
+        do {
+            Consola.mostrarMenu();  // Mostrar el menú principal
+            opcion = Consola.elegirOpcionMenu();  // Elegir opción del menú
+            ejecutarOpcion(opcion);  // Ejecutar la opción seleccionada
+        } while (opcion != 4);  // Continuar hasta que se elija salir
+
+
+
 
     }
+
+
+
+
     // Método para ejecutar una opción del menú
     public static void ejecutarOpcion(int opcion) {
         switch (opcion) {
