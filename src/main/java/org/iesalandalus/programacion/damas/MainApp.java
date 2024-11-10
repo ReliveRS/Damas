@@ -29,7 +29,11 @@ public class MainApp
                 System.out.println("Opción no válida.");
         }
     }
-
+    // Método para crear una dama por defecto
+    public static void crearDamaDefecto() {
+        dama = new Dama();  // Crear dama blanca en una posición aleatoria
+        System.out.println("Dama creada por defecto: " + dama);
+    }
 
 
 
