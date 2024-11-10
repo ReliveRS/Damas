@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Dama {
 
 //Atributos de la Clase Dama
@@ -54,7 +56,7 @@ public class Dama {
         this.esDamaEspecial = false;  // No es dama especial inicialmente
     }
 
-    // Método para crear una posición inicial aleatoria basada en el color de la dama
+// Método para crear una posición inicial aleatoria basada en el color de la dama
     private Posicion crearPosicionInicial(Color color) {
         int fila = 0;
         char columna;
@@ -72,6 +74,9 @@ public class Dama {
         return new Posicion(fila, columna);  // Retorna una nueva posición aleatoria
     }
 
+// Método para mover la dama
+
+    public void mover(Direccion direccion, int pasos) {
 
 
 
