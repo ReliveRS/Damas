@@ -49,6 +49,19 @@ public class Posicion {
 
     }
 
+    // Métodos equals y hashCode
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Posicion posicion = (Posicion) obj;
+        return fila == posicion.fila && columna == posicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * fila + columna;
+    }
 
 
 
