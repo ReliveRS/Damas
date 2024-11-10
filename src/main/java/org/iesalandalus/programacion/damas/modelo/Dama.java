@@ -74,12 +74,78 @@ public class Dama {
         return new Posicion(fila, columna);  // Retorna una nueva posición aleatoria
     }
 
+
 // Método para mover la dama
+public void mover(Direccion direccion, int pasos) throws IllegalArgumentException, OperationNotSupportedException {
+    // Validación de dirección nula
+    if (direccion == null) {
+        throw new IllegalArgumentException("La dirección no puede ser nula.");
+    }
 
-    public void mover(Direccion direccion, int pasos) {
+    // Si la dama no es especial, solo puede avanzar, no retroceder
+    if (!esDamaEspecial) {
+        if ((color == Color.BLANCO && (direccion == Direccion.SUROESTE || direccion == Direccion.SURESTE)) ||
+                (color == Color.NEGRO && (direccion == Direccion.NORESTE || direccion == Direccion.NOROESTE))) {
+            throw new OperationNotSupportedException("No se puede mover en esa dirección si no es una dama especial.");
+        }
 
+        pasos = 1;  // Si no es dama especial, solo puede moverse 1 casilla
+    }
 
+    // Verificación de que el número de pasos es válido
+    if (pasos < 1) {
+        throw new IllegalArgumentException("El número de pasos debe ser mayor o igual que 1.");
+    }
 
+    // Mover la dama según la dirección
+    int nuevaFila = posicion.getFila();
+    char nuevaColumna = posicion.getColumna();
+
+    switch (direccion) {
+        case NORESTE:
+            nuevaFila += pasos;
+            nuevaColumna += pasos;
+            break;
+        case SURESTE:
+            nuevaFila -= pasos;
+            nuevaColumna += pasos;
+            break;
+        case SUROESTE:
+            nuevaFila -= pasos;
+            nuevaColumna -= pasos;
+            break;
+        case NOROESTE:
+            nuevaFila += pasos;
+            nuevaColumna -= pasos;
+            break;
+        default:
+            throw new OperationNotSupportedException("Dirección no válida.");
+    }
+
+    // Verificación de límites del tablero (1-8 para filas y 'a'-'h' para columnas)
+    if (nuevaFila < 1 || nuevaFila > 8 || nuevaColumna < 'a' || nuevaColumna > 'h') {
+        throw new OperationNotSupportedException("Movimiento fuera de los límites del tablero.");
+    }
+
+    // Actualizar la posición
+    posicion.setFila(nuevaFila);
+    posicion.setColumna(nuevaColumna);
+
+    // Comprobar si la dama ha llegado al extremo y convertirse en dama especial
+    if ((color == Color.BLANCO && nuevaFila == 8) || (color == Color.NEGRO && nuevaFila == 1)) {
+        esDamaEspecial = true;
+    }
+}
+
+    // Método toString que devuelve la representación en cadena del objeto Dama
+    @Override
+    public String toString() {
+        return "Dama{" +
+                "color=" + color +
+                ", posicion=" + posicion +
+                ", esDamaEspecial=" + esDamaEspecial +
+                '}';
+    }
 
 
 
