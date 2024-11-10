@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.damas;
 
+import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.damas.modelo.Dama;
 
 public class MainApp
@@ -34,7 +35,12 @@ public class MainApp
         dama = new Dama();  // Crear dama blanca en una posición aleatoria
         System.out.println("Dama creada por defecto: " + dama);
     }
-
+    // Método para crear una dama eligiendo el color
+    public static void crearDamaColor() {
+        Color color = Consola.elegirOpcion();  // Elegir color de la dama
+        dama = new Dama(color);  // Crear dama con color
+        System.out.println("Dama creada con color: " + dama);
+    }
 
 
 
