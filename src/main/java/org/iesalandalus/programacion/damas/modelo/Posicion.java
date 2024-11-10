@@ -62,7 +62,11 @@ public class Posicion {
     public int hashCode() {
         return 31 * fila + columna;
     }
-
+    // Método toString
+    @Override
+    public String toString() {
+        return "fila=" + fila + ", columna=" + columna;
+    }
 
 
 
