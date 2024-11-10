@@ -2,6 +2,9 @@ package org.iesalandalus.programacion.damas;
 
 import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.damas.modelo.Dama;
+import org.iesalandalus.programacion.damas.modelo.Direccion;
+
+import javax.naming.OperationNotSupportedException;
 
 public class MainApp
 {
@@ -41,6 +44,41 @@ public class MainApp
         dama = new Dama(color);  // Crear dama con color
         System.out.println("Dama creada con color: " + dama);
     }
+
+//Metodo para mover la dama
+    private static void mover()
+    {
+        if (dama != null)
+        {
+            Consola.mostrarMenuDirecciones();
+            Direccion direccion = Consola.elegirDireccion();
+            int pasos = 1;
+
+            // Si la dama es especial, preguntar por el número de casillas
+            if (dama.esDamaEspecial())
+            {
+                pasos = Consola.elegirPasos();
+            }
+
+            // Intentar mover la dama y capturar posibles excepciones
+
+            try
+            {
+                dama.mover(direccion, pasos);
+                System.out.println("Dama movida a la nueva posición: " + dama);
+            } catch (OperationNotSupportedException e)
+            {
+                System.out.println("Error: " + e.getMessage());
+            }
+        } else
+        {
+            System.out.println("Primero debe crear una dama para poder moverla.");
+        }
+    }
+
+
+
+
 
 
 

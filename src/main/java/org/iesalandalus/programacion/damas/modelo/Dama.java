@@ -46,14 +46,14 @@ public class Dama {
     public Dama() {
         this.color = Color.BLANCO;  // La dama será blanca por defecto
         this.posicion = crearPosicionInicial(color);  // Posición inicial aleatoria para la dama blanca
-        this.esDamaEspecial = false;  // No es dama especial inicialmente
+        esDamaEspecial = false;  // No es dama especial inicialmente
     }
 
 // Constructor con color especificado
     public Dama(Color color) {
         this.color = color;
         this.posicion = crearPosicionInicial(color);  // Posición inicial basada en el color
-        this.esDamaEspecial = false;  // No es dama especial inicialmente
+        esDamaEspecial = false;  // No es dama especial inicialmente
     }
 
 // Método para crear una posición inicial aleatoria basada en el color de la dama
@@ -148,7 +148,6 @@ public void mover(Direccion direccion, int pasos) throws IllegalArgumentExceptio
     }
 
 
-
-
-
+    public boolean esDamaEspecial() {
+    }
 }
