@@ -58,6 +58,14 @@ public class Consola {
         }
         return color;
     }
+    // Método para mostrar el menú de direcciones
+    public static void mostrarMenuDirecciones() {
+        System.out.println("Direcciones posibles:");
+        System.out.println("1. NORESTE");
+        System.out.println("2. SURESTE");
+        System.out.println("3. SUROESTE");
+        System.out.println("4. NOROESTE");
+    }
 
 
 
