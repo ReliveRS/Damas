@@ -76,7 +76,14 @@ public class MainApp
         }
     }
 
-
+// Método para mostrar la dama
+    public static void mostrarDama() {
+        if (dama != null) {
+            System.out.println("Dama: " + dama);
+        } else {
+            System.out.println("No se ha creado ninguna dama.");
+        }
+    }
 
 
 
