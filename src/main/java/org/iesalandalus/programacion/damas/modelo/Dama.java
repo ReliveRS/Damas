@@ -40,7 +40,12 @@ public class Dama {
         Dama.esDamaEspecial = esDamaEspecial;
     }
 
-
+// Constructor por defecto (dama blanca en posición aleatoria en las filas 1, 2, 3)
+    public Dama() {
+        this.color = Color.BLANCO;  // La dama será blanca por defecto
+        this.posicion = crearPosicionInicial(color);  // Posición inicial aleatoria para la dama blanca
+        this.esDamaEspecial = false;  // No es dama especial inicialmente
+    }
 
 
 
