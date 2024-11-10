@@ -1,5 +1,9 @@
 package org.iesalandalus.programacion.damas;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
+
+
 public class Consola {
 
     private Consola(){
@@ -14,7 +18,22 @@ public class Consola {
         System.out.println("4. Salir");
     }
 
+    // Método para elegir una opción del menú principal
+    public static int elegirOpcionMenu() {
 
+        int opcion;
+
+        do{
+            System.out.print("Elija una opción (1-4): ");
+            opcion =  Entrada.entero();
+            if (opcion >= 1 && opcion <= 4) {
+                return opcion;
+            } else {
+                System.out.println("Opción no válida. Inténtelo de nuevo.");
+            }
+        }while(opcion<1 && opcion >4)
+
+    }
 
 
 
