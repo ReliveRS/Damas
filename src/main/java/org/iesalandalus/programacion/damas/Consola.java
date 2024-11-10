@@ -1,7 +1,9 @@
 package org.iesalandalus.programacion.damas;
 
+import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
+import java.util.Scanner;
 
 
 public class Consola {
@@ -34,6 +36,35 @@ public class Consola {
         }while(opcion<1 && opcion >4)
 
     }
+
+// Método para elegir el color de la dama
+    public static Color elegirOpcion() {
+
+        Color color = null;
+
+        while (color == null) {
+            System.out.print("Elija el color de la dama (BLANCO o NEGRO): ");
+            String opcion = Entrada.cadena();
+            switch (opcion) {
+                case "BLANCO":
+                    color = Color.BLANCO;
+                    break;
+                case "NEGRO":
+                    color = Color.NEGRO;
+                    break;
+                default:
+                    System.out.println("Opción inválida, por favor elija entre 'BLANCO' o 'NEGRO'.");
+            }
+        }
+        return color;
+    }
+
+
+
+
+
+
+
 
 
 
