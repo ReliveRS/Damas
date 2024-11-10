@@ -47,7 +47,12 @@ public class Dama {
         this.esDamaEspecial = false;  // No es dama especial inicialmente
     }
 
-
+// Constructor con color especificado
+    public Dama(Color color) {
+        this.color = color;
+        this.posicion = crearPosicionInicial(color);  // Posición inicial basada en el color
+        this.esDamaEspecial = false;  // No es dama especial inicialmente
+    }
 
 
 
