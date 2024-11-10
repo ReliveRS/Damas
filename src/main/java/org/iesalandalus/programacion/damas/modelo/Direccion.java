@@ -8,4 +8,8 @@ public enum Direccion {
     NOROESTE("Noroeste");
 
     private final String cadenaAMostrar;
+
+    private Direccion(String cadenaAMostrar) {
+        this.cadenaAMostrar = cadenaAMostrar;
+    }
 }
