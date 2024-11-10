@@ -125,7 +125,10 @@ public class Consola {
 
     }
 
-
+    // Método de despedida
+    public static void despedirse() {
+        System.out.println("¡Gracias por usar la aplicación! Hasta pronto.");
+    }
 
 
 
