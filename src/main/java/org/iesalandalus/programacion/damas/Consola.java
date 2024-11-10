@@ -104,6 +104,26 @@ public class Consola {
         }
     }
 
+// Método para elegir el número de pasos
+    public static int elegirPasos()
+    {
+        int pasos = 0;
+
+        do
+        {
+            System.out.print("Introduzca el número de casillas a mover (mayor o igual que 1): ");
+
+            pasos = Entrada.entero();
+            if (pasos < 1) {
+                System.out.println("El número de pasos debe ser al menos 1.");
+            }
+
+        }while(pasos<1)
+
+        return pasos;
+
+
+    }
 
 
 
